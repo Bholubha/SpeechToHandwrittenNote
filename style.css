@@ -1,0 +1,92 @@
+.header {
+    text-align: center;
+    font-size: 4vh;
+    margin: 1vh auto;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: inherit;
+    color: rgb(184, 17, 255);
+}
+
+.Form {
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 255, 197);
+    width: 90%;
+    padding: 20px;
+}
+
+form{
+    width: 100%;
+}
+
+.Form label {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: inherit;
+    color: rgb(184, 17, 255);
+    display: block;
+    margin: 1.5vh;
+}
+
+ button{
+    display: block;
+    margin: 3vh auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2vh;
+    font-weight: 600;
+    padding: 1vh 1vh;
+    background-color: rgb(240, 109, 255) ;
+    border-radius: 2vh;
+    cursor: pointer;
+    
+    display: block;
+}
+
+.Form textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    border: 2px solid rgb(184, 17, 255);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 2vh auto;
+}
+
+#submit{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vh;
+    font-weight: 600;
+    padding: 1vh 1vh;
+    background-color: rgb(253, 253, 204) ;
+    border-radius: 2vh;
+    cursor: pointer;
+    margin: 1vh auto;
+    display: block;
+}
+
+#submit:hover{
+    background-color: rgb(255, 255, 143);
+    color: rgb(42, 42, 42);
+}
+
+.HandWrittenNote{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px;
+}
+
+#outputText img{
+ /* margin: 0vh -1.3vh; */
+ height: 3vh;
+ width: 2vw;
+ filter: grayscale(100%);
+}
