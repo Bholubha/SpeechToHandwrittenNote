@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +10,79 @@
 </head>
 <script>
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const params = new URLSearchParams(window.location.search);
-    const inputText = params.get('inputText');
+    document.addEventListener('DOMContentLoaded', function () {
+        const params = new URLSearchParams(window.location.search);
+        let inputText = params.get('inputText');
 
-    const outputArea = document.getElementById('outputText');
-    outputArea.innerHTML = ""; 
 
-    for (let i = 0; i < inputText.length; i++) {
-        let character = inputText[i].toUpperCase();
-        if (character === " ") character = "space";
-        const imageElement = document.createElement("img");
-        imageElement.src = "/characters/" + character + ".jpg";
-        outputArea.appendChild(imageElement);
+        inputText = inputText.split("");
+
+
+        const outputArea = document.getElementById('outputText');
+        outputArea.innerHTML = "";
+
+        const specialCharMap = new Map([
+            [' ', 'space'],
+            [':', 'ddot'],
+            ['<', 'lbrace'],
+            ['>', 'rbrace'],
+            ['?', 'que'],
+            ['.', 'dot'],
+            ['"', 'IC2'],
+            ["'", 'IC1'],
+            ['*', 'star'],
+            ['#', 'hash'],
+            ['/', 'forslash'],
+            ['\\', 'backslash']
+
+        ]);
+
+        let lastElement;
+
+        for (let i = 0; i < inputText.length; i++) {
+            let character = inputText[i];
+
+            const imageElement = document.createElement("img");
+            let path = "";
+
+            if (character >= 'a' && character <= 'z') path = "small_";
+
+            character = specialCharMap.get(character) || character;
+
+            console.log(character)
+
+            if (character === '\n') {
+                outputArea.removeChild(lastElement);
+
+                const brElement = document.createElement("br");
+                outputArea.appendChild(brElement);
+                continue;
+            }
+
+            path = "/characters/" + path + character + ".jpg";
+
+            imageElement.src = path;
+
+            lastElement = imageElement;
+
+            outputArea.appendChild(imageElement);
+        }
+
+    });
+
+    function PrintNote(){
+        window.print();
     }
 
-});
-
 </script>
+
 <body>
-    
+
     <div class="HandWrittenNote">
         <div id="outputText"></div>
     </div>
+
+    <button id="printButton" onclick="PrintNote()">Print Page</button>
 </body>
+
 </html>

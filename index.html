@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HandWriting</title>
     <link rel="stylesheet" href="style.css">
-   
+
 </head>
+
 <body>
     <div class="header">
         <div class="title">
@@ -15,24 +17,24 @@
     </div>
 
     <div class="Form">
-            <form action="./show.html">
-               
+        <form action="./show.html" method="post">
+            
+            <label for="text">Enter Your Text</label>
+            <textarea name="inputText" id="inputText"></textarea>
 
-                <label for="text">Enter Your Text</label>
-                <textarea name="inputText" id="inputText"></textarea>
-                
-                <input type="submit" id="submit" value="Get HandWritten Note">
+            <input type="submit" id="submit" value="Get HandWritten Note">
 
-            </form>
+        </form>
 
     </div>
 
     <button id="startButton">Start Voice Input</button>
-    
+
     <div class="HandWrittenNote">
         <div id="outputText"></div>
     </div>
 
 </body>
 <script src="logic.js"></script>
+
 </html>
